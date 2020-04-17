@@ -1,5 +1,6 @@
-  ## Notes from  meeting about format
+# Notes from  meeting about format
 
+## Request/Response/Event
   
   Jet key/value store:
   - key: string
@@ -46,3 +47,33 @@ add state request payload
 +--------------------------------------------------------------------------+
 |SET_STATE|key length|key|Value type|Value length|Value                    |
 +--------------------------------------------------------------------------+
+
+
+### Fetching Events
+
+
+Request:
+
++-------------------------------------------------------------+
+|FETCH_STATES|startsWith key length|startsWith key            |
++-------------------------------------------------------------+
+
+Response: In the respose the fetch_id MUST be encoded somehow. The daemon takes care that the fetch_id is unique per daemon. The fetch_id MUST be an integer number.
+
++-------------------------------------+
+|marker for success|fetch_id          |
++-------------------------------------+
++-------------------------------------+
+|marker for error                     |
++-------------------------------------+
+
+Events: Happens if a matching key is added/changed/removed
+
++-------------------------------------------------------+
+|event_type|fetch_id|Value type|Value length|Value      |
++-------------------------------------------------------+
+
+  Event types:
+  - add
+  - change
+  - remove
