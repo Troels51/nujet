@@ -12,3 +12,7 @@ To build a parser for the spec
 ```
 ksc nujet.ksy -t python
 ```
+
+### Run python Server/Client
+First build the nujet python parser inside each directory. Then run with python3.
+The client can only send a request
