@@ -30,8 +30,7 @@
                       Message types:
                       - request
                       | response
-                      | event
-                      | (request which does not get a response)
+                      | event (request which does not get a response)
                       - info (to get protocol version etc., always sent out immediately by the daeomon after a peer connects)
 
 
@@ -69,9 +68,9 @@ Response: In the respose the fetch_id MUST be encoded somehow. The daemon takes 
 
 Events: Happens if a matching key is added/changed/removed
 
-+-------------------------------------------------------+
-|event_type|fetch_id|Value type|Value length|Value      |
-+-------------------------------------------------------+
++----------------------------------------------------------------------+
+|event_type|fetch_id|key length|key|Value type|Value length|Value      |
++----------------------------------------------------------------------+
 
   Event types:
   - add
