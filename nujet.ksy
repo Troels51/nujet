@@ -101,6 +101,8 @@ types:
     seq:
       - id: id
         type: u4
+      - id: key
+        type: key
       - id: type
         type: value_type
       - id: value
